@@ -35,3 +35,6 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### CONNECTION STRINGS ###
+/backend/src/main/resources/application.properties
