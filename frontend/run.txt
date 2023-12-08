@@ -1,0 +1,4 @@
+# To run the frontend
+npx expo start
+# Go to http://localhost:19006/ (on desktop)
+# Scan barcode (mobile)
