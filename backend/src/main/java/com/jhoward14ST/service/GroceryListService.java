@@ -1,7 +1,7 @@
 package main.java.com.jhoward14ST.service;
 
+import main.java.com.jhoward14ST.dto.GroceryListDTO;
 import org.springframework.stereotype.Service;
-import com.jhoward14ST.dto.GroceryListDTO;
 import com.jhoward14ST.model.GroceryList;
 import com.jhoward14ST.repository.GroceryListRepository;
 

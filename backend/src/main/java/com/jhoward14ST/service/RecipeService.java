@@ -1,7 +1,7 @@
 package main.java.com.jhoward14ST.service;
 
+import main.java.com.jhoward14ST.dto.RecipeDTO;
 import org.springframework.stereotype.Service;
-import com.jhoward14ST.dto.RecipeDTO;
 import com.jhoward14ST.model.Recipe;
 import com.jhoward14ST.repository.RecipeRepository;
 

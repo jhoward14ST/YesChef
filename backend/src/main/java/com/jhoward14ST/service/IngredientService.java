@@ -1,7 +1,7 @@
 package main.java.com.jhoward14ST.service;
 
+import main.java.com.jhoward14ST.dto.IngredientDTO;
 import org.springframework.stereotype.Service;
-import com.jhoward14ST.dto.IngredientDTO;
 import com.jhoward14ST.model.Ingredient;
 import com.jhoward14ST.repository.IngredientRepository;
 
