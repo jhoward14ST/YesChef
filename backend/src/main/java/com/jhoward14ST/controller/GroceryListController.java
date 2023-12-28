@@ -2,38 +2,36 @@ package main.java.com.jhoward14ST.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import main.java.com.jhoward14ST.model.Ingredient;
+import main.java.com.jhoward14ST.repository.GroceryListRepository;
+
 import java.util.List;
 
 @RestController
-@RequestMapping("/ingredients")
+@RequestMapping("/grocery_list")
 public class GroceryListController {
 
     @Autowired
-    private IngredientRepository ingredientRepository;
+    private GroceryListRepository groceryListRepository;
 
     @GetMapping
     public List<Ingredient> getAllIngredients() {
-        return ingredientRepository.findAll();
+        return groceryListRepository.findAll();
     }
 
     @GetMapping("/{id}")
-    public Ingredient getIngredientById(@PathVariable Long id) {
-        return ingredientRepository.findById(id).orElse(null);
+    public Ingredient getIngredientById(@PathVariable int id) {
+        return groceryListRepository.findById(id).orElse(null);
     }
 
     @PostMapping
-    public Ingredient createIngredient(@RequestBody Ingredient ingredient) {
-        return ingredientRepository.save(ingredient);
-    }
-
-    @PutMapping("/{id}")
-    public Ingredient updateIngredient(@PathVariable Long id, @RequestBody Ingredient ingredient) {
-        ingredient.setId(id);
-        return ingredientRepository.save(ingredient);
+    public Ingredient addIngredientToList(@RequestBody Ingredient ingredient) {
+        return groceryListRepository.save(ingredient);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteIngredient(@PathVariable Long id) {
-        ingredientRepository.deleteById(id);
+    public void removeIngredientFromList(@PathVariable int id) {
+        groceryListRepository.deleteById(id);
     }
 }

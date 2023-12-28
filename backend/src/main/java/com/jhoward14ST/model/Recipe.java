@@ -9,6 +9,12 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "recipes")
 public class Recipe {
+
+    /**
+     * Recipes that the user has added
+     * TODO: Change timeToMake to a time object/add functions for time
+     */
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;

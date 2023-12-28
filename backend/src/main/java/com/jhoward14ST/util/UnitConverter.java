@@ -29,7 +29,7 @@ public class UnitConverter {
      */
     private static String formatQuantity(double quantity) {
         // Might implement a more sophisticated formatting, potentially using fractions.
-        // For simplicity, we're rounding to two decimal places.
+        // Currently rounding to two decimal places.
         return String.format("%.2f", quantity);
     }
 }

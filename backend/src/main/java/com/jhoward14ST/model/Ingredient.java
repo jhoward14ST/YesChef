@@ -11,6 +11,11 @@ import javax.persistence.EnumType;
 @Entity
 @Table(name = "ingredients")
 public class Ingredient {
+
+    /**
+     * Ingredients that the user has added and has in their inventory
+     */
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;

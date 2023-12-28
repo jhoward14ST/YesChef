@@ -10,6 +10,10 @@ import javax.persistence.Table;
 @Table(name = "recipe_ingredients")
 public class RecipeIngredient {
 
+    /**
+     * Ingredients that are needed for a recipe
+     */
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -48,16 +52,8 @@ public class RecipeIngredient {
         return recipeId;
     }
 
-    public void setRecipeId(int recipeId) {
-        this.recipeId = recipeId;
-    }
-
     public int getIngredientId() {
         return ingredientId;
-    }
-
-    public void setIngredientId(int ingredientId) {
-        this.ingredientId = ingredientId;
     }
 
     public Double getQuantity() {
