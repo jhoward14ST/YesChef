@@ -5,7 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persitence.Enumerated;
+import javax.persistence.Enumerated;
 import javax.persistence.EnumType;
 
 @Entity

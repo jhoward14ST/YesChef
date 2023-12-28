@@ -1,48 +1,41 @@
-import java.lang.annotation.Inherited;
+package main.java.com.jhoward14ST.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Enumerated;
-import javax.persistence.EnumType;
-
-@Entity
-@Table(name = "grocery_list")
-public class GroceryList {
-
-    /**
-     * List of recipe ingredients that are needed to be purchased
-     */
-    
-    @Id 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class RecipeIngredientDTO {
     private int id;
-
-    @Column(name = "ingredient_id")
+    private int recipeId;
     private int ingredientId;
-
     private Double quantity;
-
-    @Enumerated(EnumType.STRING)
     private ImperialUnit unit;
 
-    public GroceryList(
+    // No-args constructor for frameworks
+    public RecipeIngredientDTO() {
+    }
+
+    // All-args constructor for convenience
+    public RecipeIngredientDTO(
+            int id,
+            int recipeId,
             int ingredientId,
             Double quantity,
             ImperialUnit unit) {
+        this.id = id;
+        this.recipeId = recipeId;
         this.ingredientId = ingredientId;
         this.quantity = quantity;
         this.unit = unit;
     }
 
+    // Getters and setters
     public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getRecipeId() {
+        return recipeId;
     }
 
     public int getIngredientId() {
@@ -55,5 +48,13 @@ public class GroceryList {
 
     public void setQuantity(Double quantity) {
         this.quantity = quantity;
+    }
+
+    public ImperialUnit getUnit() {
+        return unit;
+    }
+
+    public void setUnit(ImperialUnit unit) {
+        this.unit = unit;
     }
 }
