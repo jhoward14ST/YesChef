@@ -8,10 +8,6 @@ public class IngredientDTO {
     private Double qtyInInventory;
     private ImperialUnit unit;
 
-    // No-args constructor for frameworks
-    public IngredientDTO() {
-    }
-
     // All-args constructor for convenience
     public IngredientDTO(
             int id,
@@ -22,6 +18,10 @@ public class IngredientDTO {
         this.description = description;
         this.qtyInInventory = qtyInInventory;
         this.unit = unit;
+    }
+
+    // No-args constructor for frameworks
+    public IngredientDTO() {
     }
 
     // Getters and setters

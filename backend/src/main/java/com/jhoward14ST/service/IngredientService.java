@@ -31,7 +31,7 @@ public class IngredientService {
                 ingredient.getUnit());
     }
 
-    public Ingredient convertToEntity(main.java.com.jhoward14ST.dto.IngredientDTO ingredientDto) {
+    public Ingredient convertToEntity(IngredientDTO ingredientDto) {
         Ingredient ingredient = new Ingredient();
         ingredient.setID(ingredientDto.getID());
         ingredient.setDescription(ingredientDto.getDescription());

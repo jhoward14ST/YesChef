@@ -28,6 +28,7 @@ public class Ingredient {
     @Enumerated(EnumType.STRING)
     private ImperialUnit unit;
 
+    // All-args constructor
     public Ingredient(
             int id,
             String description,
@@ -43,6 +44,7 @@ public class Ingredient {
     public Ingredient() {
     }
 
+    // Getters and setters
     public int getID() {
         return id;
     }

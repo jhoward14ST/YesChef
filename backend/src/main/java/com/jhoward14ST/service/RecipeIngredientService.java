@@ -33,7 +33,8 @@ public class RecipeIngredientService {
                 recipeIngredient.getID(),
                 recipeIngredient.getRecipeID(),
                 recipeIngredient.getIngredientID(),
-                recipeIngredient.getQuantity());
+                recipeIngredient.getQuantity(),
+                recipeIngredient.getUnit());
     }
 
     public RecipeIngredient convertToEntity(RecipeIngredientDTO recipeIngredientDto) {
@@ -42,6 +43,7 @@ public class RecipeIngredientService {
         recipeIngredient.setRecipeID(recipeIngredientDto.getRecipeID());
         recipeIngredient.setIngredientID(recipeIngredientDto.getIngredientID());
         recipeIngredient.setQuantity(recipeIngredientDto.getQuantity());
+        recipeIngredient.setUnit(recipeIngredientDto.getUnit());
         return recipeIngredient;
     }
 }
