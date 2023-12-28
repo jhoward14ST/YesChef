@@ -2,10 +2,15 @@ package main.java.com.jhoward14ST.controller;
 
 import com.jhoward14ST.model.Ingredient;
 import com.jhoward14ST.repository.IngredientRepository;
+
+import main.java.com.jhoward14ST.dto.IngredientDTO;
+import main.java.com.jhoward14ST.service.IngredientService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/ingredients")
@@ -14,19 +19,30 @@ public class IngredientController {
     @Autowired
     private IngredientRepository ingredientRepository;
 
+    @Autowired
+    private IngredientService ingredientService;
+
+    /* STREAM: Check later */
     @GetMapping
     public List<Ingredient> getAllIngredients() {
-        return ingredientRepository.findAll();
+        List<Ingredient> ingredients = ingredientRepository.findAll();
+        return ingredients.stream()
+                .map(ingredientService::convertToDTO)
+                .collect(Collectors.toList());
     }
 
     @GetMapping("/{id}")
     public Ingredient getIngredientById(@PathVariable int id) {
-        return ingredientRepository.findById(id).orElse(null);
+        Ingredient ingredient = ingredientRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Ingredient not found with id: " + id));
+        return ingredientService.convertToDTO(ingredient);
     }
 
     @PostMapping
-    public Ingredient createIngredient(@RequestBody Ingredient ingredient) {
-        return ingredientRepository.save(ingredient);
+    public IngredientDTO createIngredient(@RequestBody IngredientDTO ingredientDto) {
+        Ingredient ingredient = ingredientService.convertToEntity(ingredientDto);
+        Ingredient savedIngredient = ingredientRepository.save(ingredient);
+        return ingredientService.convertToDTO(savedIngredient);
     }
 
     @PutMapping("/{id}")

@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 import main.java.com.jhoward14ST.model.Ingredient;
 import main.java.com.jhoward14ST.repository.GroceryListRepository;
+import main.java.com.jhoward14ST.service.GroceryListService;
 
 import java.util.List;
 
@@ -14,6 +15,15 @@ public class GroceryListController {
 
     @Autowired
     private GroceryListRepository groceryListRepository;
+
+    @Autowired
+    private GroceryListService groceryListService;
+
+    /*
+     * TODO: Modify functionality within:
+     * controller, service, and repo
+     * for more tailored functionality
+     */
 
     @GetMapping
     public List<Ingredient> getAllIngredients() {

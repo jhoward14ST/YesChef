@@ -6,4 +6,10 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class GroceryListRepository extends JpaRepository<GroceryList, Integer> {
+    /*
+     * TODO: Modify functionality within:
+     * controller, service, and repo
+     * for more tailored functionality
+     */
+
 }

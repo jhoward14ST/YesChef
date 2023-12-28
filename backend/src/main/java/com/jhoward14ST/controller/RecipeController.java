@@ -2,12 +2,15 @@ package main.java.com.jhoward14ST.controller;
 
 import com.jhoward14ST.model.Recipe;
 import com.jhoward14ST.repository.RecipeRepository;
+
+import main.java.com.jhoward14ST.dto.RecipeDTO;
+import main.java.com.jhoward14ST.service.RecipeService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
-import main.java.com.jhoward14ST.dto.RecipeDTO;
 
 @RestController
 @RequestMapping("/recipes")
@@ -16,23 +19,29 @@ public class RecipeController {
     @Autowired
     private RecipeRepository recipeRepository;
 
+    @Autowired
+    private RecipeService recipeService;
+
     @GetMapping("/")
     public List<Recipe> getAllRecipes() {
-        return recipeRepository.findAll();
+        List<Recipe> recipes = recipeRepository.findAll();
+        return recipes.stream()
+                .map(recipeService::convertToDTO)
+                .collect(Collectors.toList());
     }
 
     @GetMapping("/{id}")
     public RecipeDTO getRecipeById(@PathVariable int id) {
         Recipe recipe = recipeRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Recipe not found with id: " + id));
-        return convertToDTO(recipe);
+        return recipeService.convertToDTO(recipe);
     }
 
     @PostMapping("/")
     public RecipeDTO createRecipe(@RequestBody RecipeDTO recipeDto) {
-        Recipe recipe = convertToEntity(recipeDto);
+        Recipe recipe = recipeService.convertToEntity(recipeDto);
         Recipe savedRecipe = recipeRepository.save(recipe);
-        return convertToDTO(savedRecipe); // Convert entity back to DTO to return
+        return recipeService.convertToDTO(savedRecipe); // Convert entity back to DTO to return
     }
 
     @PutMapping("/{id}")
@@ -52,20 +61,5 @@ public class RecipeController {
     @DeleteMapping("/{id}")
     public void deleteRecipe(@PathVariable int id) {
         recipeRepository.deleteById(id);
-    }
-
-    // Utility method to convert Entity to DTO
-    private RecipeDTO convertToDTO(Recipe recipe) {
-        return new RecipeDTO(recipe.getId(), recipe.getDescription(), recipe.getInstructions(), recipe.getTimeToMake());
-    }
-
-    // Utility method to convert DTO to Entity
-    private Recipe convertToEntity(RecipeDTO recipeDto) {
-        Recipe recipe = new Recipe();
-        recipe.setId(recipeDto.getId());
-        recipe.setDescription(recipeDto.getDescription());
-        recipe.setInstructions(recipeDto.getInstructions());
-        recipe.setTimeToMake(recipeDto.getTimeToMake());
-        return recipe;
     }
 }
