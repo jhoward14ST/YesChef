@@ -31,6 +31,10 @@ public class Ingredient {
         this.unit = unit;
     }
 
+    // no-arg constructor
+    public Ingredient() {
+    }
+
     public int getID() {
         return id;
     }

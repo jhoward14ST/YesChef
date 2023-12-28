@@ -27,6 +27,10 @@ public class Recipe {
         this.TimeToMake = timeToMake;
     }
 
+    // no-arg constructor
+    public Recipe() {
+    }
+
     public int getID() {
         return id;
     }
