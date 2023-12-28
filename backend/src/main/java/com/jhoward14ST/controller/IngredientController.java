@@ -1,8 +1,7 @@
 package main.java.com.jhoward14ST.controller;
 
-import com.jhoward14ST.model.Ingredient;
-import com.jhoward14ST.repository.IngredientRepository;
-
+import main.java.com.jhoward14ST.model.Ingredient;
+import main.java.com.jhoward14ST.repository.IngredientRepository;
 import main.java.com.jhoward14ST.dto.IngredientDTO;
 import main.java.com.jhoward14ST.service.IngredientService;
 

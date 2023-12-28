@@ -1,9 +1,11 @@
 package main.java.com.jhoward14ST.service;
 
+import main.java.com.jhoward14ST.model.Ingredient;
 import main.java.com.jhoward14ST.dto.IngredientDTO;
+import main.java.com.jhoward14ST.repository.IngredientRepository;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.jhoward14ST.model.Ingredient;
-import com.jhoward14ST.repository.IngredientRepository;
 
 @Service
 public class IngredientService {

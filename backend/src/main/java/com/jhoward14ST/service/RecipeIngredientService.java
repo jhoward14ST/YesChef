@@ -4,7 +4,13 @@ import main.java.com.jhoward14ST.dto.RecipeIngredientDTO;
 import main.java.com.jhoward14ST.model.RecipeIngredient;
 
 import org.springframework.stereotype.Service;
-import com.jhoward14ST.repository.RecipeIngredientRepository;
+
+import main.java.com.jhoward14ST.model.RecipeIngredient;
+import main.java.com.jhoward14ST.dto.RecipeIngredientDTO;
+import main.java.com.jhoward14ST.repository.RecipeIngredientRepository;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 @Service
 public class RecipeIngredientService {
