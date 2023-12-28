@@ -45,6 +45,10 @@ public class RecipeIngredient {
         this.unit = unit;
     }
 
+    // no-arg constructor
+    public RecipeIngredient() {
+    }
+
     public int getID() {
         return id;
     }
@@ -53,12 +57,20 @@ public class RecipeIngredient {
         this.id = id;
     }
 
-    public int getRecipeId() {
+    public int getRecipeID() {
         return recipeId;
     }
 
-    public int getIngredientId() {
+    public void setRecipeID(int recipeId) {
+        this.recipeId = recipeId;
+    }
+
+    public int getIngredientID() {
         return ingredientId;
+    }
+
+    public void setIngredientID(int ingredientId) {
+        this.ingredientId = ingredientId;
     }
 
     public Double getQuantity() {

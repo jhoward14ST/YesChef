@@ -31,16 +31,16 @@ public class RecipeIngredientService {
     public RecipeIngredientDTO convertToDTO(RecipeIngredient recipeIngredient) {
         return new RecipeIngredientDTO(
                 recipeIngredient.getID(),
-                recipeIngredient.getRecipeId(),
-                recipeIngredient.getIngredientId(),
+                recipeIngredient.getRecipeID(),
+                recipeIngredient.getIngredientID(),
                 recipeIngredient.getQuantity());
     }
 
     public RecipeIngredient convertToEntity(RecipeIngredientDTO recipeIngredientDto) {
         RecipeIngredient recipeIngredient = new RecipeIngredient();
         recipeIngredient.setID(recipeIngredientDto.getID());
-        recipeIngredient.setRecipeId(recipeIngredientDto.getRecipeId());
-        recipeIngredient.setIngredientId(recipeIngredientDto.getIngredientId());
+        recipeIngredient.setRecipeID(recipeIngredientDto.getRecipeID());
+        recipeIngredient.setIngredientID(recipeIngredientDto.getIngredientID());
         recipeIngredient.setQuantity(recipeIngredientDto.getQuantity());
         return recipeIngredient;
     }
