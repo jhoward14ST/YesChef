@@ -1,5 +1,7 @@
 package main.java.com.jhoward14ST.dto;
 
+import main.java.com.jhoward14ST.model.ImperialUnit;
+
 public class RecipeIngredientDTO {
     private int id;
     private int recipeId;
