@@ -25,7 +25,7 @@ public class IngredientService {
 
     public IngredientDTO convertToDTO(Ingredient ingredient) {
         return new IngredientDTO(
-                ingredient.getId(),
+                ingredient.getID(),
                 ingredient.getDescription(),
                 ingredient.getQtyInInventory(),
                 ingredient.getUnit());
@@ -33,9 +33,9 @@ public class IngredientService {
 
     public Ingredient convertToEntity(main.java.com.jhoward14ST.dto.IngredientDTO ingredientDto) {
         Ingredient ingredient = new Ingredient();
-        ingredient.setId(ingredientDto.getId());
-        ingredient.setName(ingredientDto.getDescription());
-        ingredient.setQuantity(ingredientDto.getQtyInInventory());
+        ingredient.setID(ingredientDto.getID());
+        ingredient.setDescription(ingredientDto.getDescription());
+        ingredient.setQtyInInventory(ingredientDto.getQtyInInventory());
         ingredient.setUnit(ingredientDto.getUnit());
         return ingredient;
     }

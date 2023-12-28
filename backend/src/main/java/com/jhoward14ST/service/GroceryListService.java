@@ -31,13 +31,13 @@ public class GroceryListService {
 
     public GroceryListDTO convertToDTO(GroceryList groceryList) {
         return new GroceryListDTO(
-                groceryList.getId(),
+                groceryList.getID(),
                 groceryList.getIngredients());
     }
 
     public GroceryList convertToEntity(GroceryListDTO groceryListDto) {
         GroceryList groceryList = new GroceryList();
-        groceryList.setId(groceryListDto.getId());
+        groceryList.setID(groceryListDto.getID());
         groceryList.setIngredients(groceryListDto.getIngredients());
         return groceryList;
     }

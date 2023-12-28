@@ -25,7 +25,7 @@ public class RecipeService {
 
     public RecipeDTO convertToDTO(Recipe recipe) {
         return new RecipeDTO(
-                recipe.getId(),
+                recipe.getID(),
                 recipe.getDescription(),
                 recipe.getInstructions(),
                 recipe.getTimeToMake());
@@ -33,7 +33,7 @@ public class RecipeService {
 
     public Recipe convertToEntity(RecipeDTO recipeDto) {
         Recipe recipe = new Recipe();
-        recipe.setId(recipeDto.getId());
+        recipe.setID(recipeDto.getID());
         recipe.setDescription(recipeDto.getDescription());
         recipe.setInstructions(recipeDto.getInstructions());
         recipe.setTimeToMake(recipeDto.getTimeToMake());

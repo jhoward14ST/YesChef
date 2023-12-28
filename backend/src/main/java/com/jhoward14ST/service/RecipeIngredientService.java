@@ -30,7 +30,7 @@ public class RecipeIngredientService {
 
     public RecipeIngredientDTO convertToDTO(RecipeIngredient recipeIngredient) {
         return new RecipeIngredientDTO(
-                recipeIngredient.getId(),
+                recipeIngredient.getID(),
                 recipeIngredient.getRecipeId(),
                 recipeIngredient.getIngredientId(),
                 recipeIngredient.getQuantity());
@@ -38,7 +38,7 @@ public class RecipeIngredientService {
 
     public RecipeIngredient convertToEntity(RecipeIngredientDTO recipeIngredientDto) {
         RecipeIngredient recipeIngredient = new RecipeIngredient();
-        recipeIngredient.setId(recipeIngredientDto.getId());
+        recipeIngredient.setID(recipeIngredientDto.getID());
         recipeIngredient.setRecipeId(recipeIngredientDto.getRecipeId());
         recipeIngredient.setIngredientId(recipeIngredientDto.getIngredientId());
         recipeIngredient.setQuantity(recipeIngredientDto.getQuantity());
