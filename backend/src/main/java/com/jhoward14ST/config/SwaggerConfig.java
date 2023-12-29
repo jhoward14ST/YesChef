@@ -13,7 +13,7 @@ public class SwaggerConfig {
     public Docket apiDocket() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.yourpackage"))
+                .apis(RequestHandlerSelectors.basePackage("com.jhoward14ST.controllers"))
                 .paths(PathSelectors.any())
                 .build();
     }
