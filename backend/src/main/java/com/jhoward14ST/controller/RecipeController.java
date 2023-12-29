@@ -7,16 +7,19 @@ import com.jhoward14ST.repository.RecipeRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-@Api(value = "Recipes Management")
 @RestController
+@Api(value = "Recipes Management")
 @RequestMapping("/api/recipes")
 public class RecipeController {
 
@@ -27,6 +30,7 @@ public class RecipeController {
     private RecipeService recipeService;
 
     @ApiOperation(value = "View a list of all recipes", response = List.class)
+    @ResponseStatus(HttpStatus.OK)
     @GetMapping("/")
     public List<RecipeDTO> getAllRecipes() {
         List<Recipe> recipes = recipeRepository.findAll();
@@ -36,6 +40,7 @@ public class RecipeController {
     }
 
     @ApiOperation(value = "Get a recipe by its ID", response = RecipeDTO.class)
+    @ResponseStatus(HttpStatus.OK)
     @GetMapping("/{id}")
     public RecipeDTO getRecipeById(@PathVariable int id) {
         Recipe recipe = recipeRepository.findById(id)
@@ -44,6 +49,7 @@ public class RecipeController {
     }
 
     @ApiOperation(value = "Create a new recipe", response = RecipeDTO.class)
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/")
     public RecipeDTO createRecipe(@RequestBody RecipeDTO recipeDto) {
         Recipe recipe = recipeService.convertToEntity(recipeDto);
@@ -52,6 +58,7 @@ public class RecipeController {
     }
 
     @ApiOperation(value = "Update an existing recipe", response = Recipe.class)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @PutMapping("/{id}")
     public Recipe updateRecipe(@PathVariable int id, @RequestBody Recipe updatedRecipe) {
         Optional<Recipe> recipeOptional = recipeRepository.findById(id);
@@ -67,6 +74,8 @@ public class RecipeController {
     }
 
     @ApiOperation(value = "Delete a recipe by its ID")
+    // Spill the tea gurl. Delete it poor.
+    @ResponseStatus(HttpStatus.I_AM_A_TEAPOT)
     @DeleteMapping("/{id}")
     public void deleteRecipe(@PathVariable int id) {
         recipeRepository.deleteById(id);

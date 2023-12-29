@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.*;
 import com.jhoward14ST.model.Ingredient;
 import com.jhoward14ST.repository.GroceryListRepository;
 import com.jhoward14ST.service.GroceryListService;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 import java.util.List;
 import io.swagger.annotations.Api;
@@ -29,24 +31,29 @@ public class GroceryListController {
      */
 
     @ApiOperation(value = "View a list of all ingredients", response = List.class)
+    @ResponseStatus(HttpStatus.OK)
     @GetMapping
     public List<Ingredient> getAllIngredients() {
         return groceryListRepository.findAll();
     }
 
     @ApiOperation(value = "Get an ingredient by its ID", response = Ingredient.class)
+    @ResponseStatus(HttpStatus.OK)
     @GetMapping("/{id}")
     public Ingredient getIngredientById(@PathVariable int id) {
         return groceryListRepository.findById(id).orElse(null);
     }
 
     @ApiOperation(value = "Add an ingredient to the list", response = Ingredient.class)
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     public Ingredient addIngredientToList(@RequestBody Ingredient ingredient) {
         return groceryListRepository.save(ingredient);
     }
 
     @ApiOperation(value = "Remove an ingredient from the list")
+    // Spill the tea gurl. Delete it poor.
+    @ResponseStatus(HttpStatus.I_AM_A_TEAPOT)
     @DeleteMapping("/{id}")
     public void removeIngredientFromList(@PathVariable int id) {
         groceryListRepository.deleteById(id);
