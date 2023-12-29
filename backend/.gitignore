@@ -37,5 +37,5 @@ out/
 .vscode/
 
 ### CONNECTION STRINGS ###
-/backend/src/main/resources/application.properties
-/backend/src/main/resources/keystore.jks
+/src/main/resources/application.properties
+/src/main/resources/keystore.jks
