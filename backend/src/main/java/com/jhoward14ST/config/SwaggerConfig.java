@@ -12,6 +12,7 @@ public class SwaggerConfig {
     @Bean
     public Docket apiDocket() {
         return new Docket(DocumentationType.SWAGGER_2)
+                .host("localhost:8080")
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.jhoward14ST.controllers"))
                 .paths(PathSelectors.any())

@@ -8,11 +8,15 @@ import com.jhoward14ST.service.IngredientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Api(value = "Ingredients Management")
 @RestController
-@RequestMapping("/ingredients")
+@RequestMapping("/api/ingredients")
 public class IngredientController {
 
     @Autowired
@@ -22,6 +26,7 @@ public class IngredientController {
     private IngredientService ingredientService;
 
     /* STREAM: Check later */
+    @ApiOperation(value = "View a list of all ingredients", response = List.class)
     @GetMapping
     public List<IngredientDTO> getAllIngredients() {
         List<Ingredient> ingredients = ingredientRepository.findAll();
@@ -30,6 +35,7 @@ public class IngredientController {
                 .collect(Collectors.toList());
     }
 
+    @ApiOperation(value = "Get an ingredient by its ID", response = IngredientDTO.class)
     @GetMapping("/{id}")
     public IngredientDTO getIngredientById(@PathVariable int id) {
         Ingredient ingredient = ingredientRepository.findById(id)
@@ -37,6 +43,7 @@ public class IngredientController {
         return ingredientService.convertToDTO(ingredient);
     }
 
+    @ApiOperation(value = "Add a new ingredient", response = IngredientDTO.class)
     @PostMapping
     public IngredientDTO createIngredient(@RequestBody IngredientDTO ingredientDto) {
         Ingredient ingredient = ingredientService.convertToEntity(ingredientDto);
@@ -44,6 +51,7 @@ public class IngredientController {
         return ingredientService.convertToDTO(savedIngredient);
     }
 
+    @ApiOperation(value = "Update an existing ingredient", response = Ingredient.class)
     @PutMapping("/{id}")
     public Ingredient updateIngredient(@PathVariable int id, @RequestBody Ingredient updatedIngredient) {
         Ingredient existingIngredient = ingredientRepository.findById(id).orElse(null);
@@ -56,6 +64,7 @@ public class IngredientController {
         return null;
     }
 
+    @ApiOperation(value = "Delete an ingredient by its ID")
     @DeleteMapping("/{id}")
     public void deleteIngredient(@PathVariable int id) {
         ingredientRepository.deleteById(id);
