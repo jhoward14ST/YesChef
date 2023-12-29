@@ -23,7 +23,7 @@ public class IngredientController {
 
     /* STREAM: Check later */
     @GetMapping
-    public List<Ingredient> getAllIngredients() {
+    public List<IngredientDTO> getAllIngredients() {
         List<Ingredient> ingredients = ingredientRepository.findAll();
         return ingredients.stream()
                 .map(ingredientService::convertToDTO)
@@ -31,7 +31,7 @@ public class IngredientController {
     }
 
     @GetMapping("/{id}")
-    public Ingredient getIngredientById(@PathVariable int id) {
+    public IngredientDTO getIngredientById(@PathVariable int id) {
         Ingredient ingredient = ingredientRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Ingredient not found with id: " + id));
         return ingredientService.convertToDTO(ingredient);
