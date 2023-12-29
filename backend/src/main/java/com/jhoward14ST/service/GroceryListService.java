@@ -1,8 +1,8 @@
-package main.java.com.jhoward14ST.service;
+package com.jhoward14ST.service;
 
-import main.java.com.jhoward14ST.model.GroceryList;
-import main.java.com.jhoward14ST.dto.GroceryListDTO;
-import main.java.com.jhoward14ST.repository.GroceryListRepository;
+import com.jhoward14ST.model.GroceryList;
+import com.jhoward14ST.dto.GroceryListDTO;
+import com.jhoward14ST.repository.GroceryListRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,18 +27,21 @@ public class GroceryListService {
      * TODO: Modify functionality within:
      * controller, service, and repo
      * for more tailored functionality
+     * TODO: Fix issues with DTO, add function for getIngredients();
      */
 
-    public GroceryListDTO convertToDTO(GroceryList groceryList) {
-        return new GroceryListDTO(
-                groceryList.getID(),
-                groceryList.getIngredients());
-    }
+    // public GroceryListDTO convertToDTO(GroceryList groceryList) {
+    //     return new GroceryListDTO(
+    //             groceryList.getID(),
+    //             groceryList.getIngredientID(),
+    //             groceryList.getQuantity(),
+    //             groceryList.getUnit());
+    // }
 
-    public GroceryList convertToEntity(GroceryListDTO groceryListDto) {
-        GroceryList groceryList = new GroceryList();
-        groceryList.setID(groceryListDto.getID());
-        groceryList.setIngredients(groceryListDto.getIngredients());
-        return groceryList;
-    }
+    // public GroceryList convertToEntity(GroceryListDTO groceryListDto) {
+    //     GroceryList groceryList = new GroceryList();
+    //     groceryList.setID(groceryListDto.getID());
+    //     groceryList.setIngredients(groceryListDto.getIngredients());
+    //     return groceryList;
+    // }
 }

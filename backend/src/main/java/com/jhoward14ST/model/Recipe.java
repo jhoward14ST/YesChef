@@ -1,6 +1,6 @@
-package main.java.com.jhoward14ST.model;
+package com.jhoward14ST.model;
 
-import main.java.com.jhoward14ST.enums.ImperialUnit;
+import com.jhoward14ST.model.ImperialUnit;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

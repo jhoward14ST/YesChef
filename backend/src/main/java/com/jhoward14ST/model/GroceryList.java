@@ -1,7 +1,8 @@
+package com.jhoward14ST.model;
+
+import com.jhoward14ST.model.ImperialUnit;
+
 import java.lang.annotation.Inherited;
-
-import main.java.com.jhoward14ST.enums.ImperialUnit;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -38,6 +39,10 @@ public class GroceryList {
         this.ingredientId = ingredientId;
         this.quantity = quantity;
         this.unit = unit;
+    }
+
+    // no-arg constructor
+    public GroceryList() {
     }
 
     public int getID() {

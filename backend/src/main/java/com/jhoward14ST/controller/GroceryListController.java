@@ -1,11 +1,11 @@
-package main.java.com.jhoward14ST.controller;
+package com.jhoward14ST.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import main.java.com.jhoward14ST.model.Ingredient;
-import main.java.com.jhoward14ST.repository.GroceryListRepository;
-import main.java.com.jhoward14ST.service.GroceryListService;
+import com.jhoward14ST.model.Ingredient;
+import com.jhoward14ST.repository.GroceryListRepository;
+import com.jhoward14ST.service.GroceryListService;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package main.java.com.jhoward14ST.dto;
+package com.jhoward14ST.dto;
 
 public class RecipeDTO {
     private int id;

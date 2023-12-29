@@ -1,6 +1,6 @@
-package main.java.com.jhoward14ST.dto;
+package com.jhoward14ST.dto;
 
-import main.java.com.jhoward14ST.model.ImperialUnit;
+import com.jhoward14ST.model.ImperialUnit;
 
 public class RecipeIngredientDTO {
     private int id;

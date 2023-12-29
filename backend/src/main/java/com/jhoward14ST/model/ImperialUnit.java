@@ -1,4 +1,4 @@
-package main.java.com.jhoward14ST.model;
+package com.jhoward14ST.model;
 
 /**
  * Enumeration of imperial units with conversion factors relative to a teaspoon.

@@ -1,6 +1,6 @@
-package main.java.com.jhoward14ST.dto;
+package com.jhoward14ST.dto;
 
-import main.java.com.jhoward14ST.model.ImperialUnit;
+import com.jhoward14ST.model.ImperialUnit;
 
 public class GroceryListDTO {
     private int id;
@@ -8,9 +8,9 @@ public class GroceryListDTO {
     private Double quantity;
     private ImperialUnit unit;
 
-    // No-args constructor for frameworks
-    public GroceryListDTO() {
-    }
+    /*
+     * TODO: Fix issues with DTO/add function for getIngredients();
+     */
 
     // All-args constructor for convenience
     public GroceryListDTO(
@@ -22,6 +22,10 @@ public class GroceryListDTO {
         this.ingredientId = ingredientId;
         this.quantity = quantity;
         this.unit = unit;
+    }
+    
+    // No-args constructor for frameworks
+    public GroceryListDTO() {
     }
 
     // Getters and setters

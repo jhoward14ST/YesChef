@@ -1,13 +1,14 @@
-package main.java.com.jhoward14ST.service;
+package com.jhoward14ST.service;
 
-import main.java.com.jhoward14ST.dto.RecipeIngredientDTO;
-import main.java.com.jhoward14ST.model.RecipeIngredient;
+import com.jhoward14ST.dto.RecipeIngredientDTO;
+import com.jhoward14ST.model.RecipeIngredient;
 
 import org.springframework.stereotype.Service;
 
-import main.java.com.jhoward14ST.model.RecipeIngredient;
-import main.java.com.jhoward14ST.dto.RecipeIngredientDTO;
-import main.java.com.jhoward14ST.repository.RecipeIngredientRepository;
+import com.jhoward14ST.model.RecipeIngredient;
+import com.jhoward14ST.dto.RecipeIngredientDTO;
+// TODO: Fix later/see if this is needed
+// import com.jhoward14ST.repository.RecipeIngredientRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,8 +26,9 @@ public class RecipeIngredientService {
      * handling complex operations."
      */
 
-    @Autowired
-    private RecipeIngredientRepository recipeIngredientRepository;
+    // TODO: See above import
+    // @Autowired
+    // private RecipeIngredientRepository recipeIngredientRepository;
 
     public RecipeIngredientDTO convertToDTO(RecipeIngredient recipeIngredient) {
         return new RecipeIngredientDTO(

@@ -1,15 +1,16 @@
-package main.java.com.jhoward14ST.controller;
+package com.jhoward14ST.controller;
 
-import main.java.com.jhoward14ST.model.Recipe;
-import main.java.com.jhoward14ST.dto.RecipeDTO;
-import main.java.com.jhoward14ST.service.RecipeService;
-import main.java.com.jhoward14ST.repository.RecipeRepository;
+import com.jhoward14ST.model.Recipe;
+import com.jhoward14ST.dto.RecipeDTO;
+import com.jhoward14ST.service.RecipeService;
+import com.jhoward14ST.repository.RecipeRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/recipes")
@@ -22,7 +23,7 @@ public class RecipeController {
     private RecipeService recipeService;
 
     @GetMapping("/")
-    public List<Recipe> getAllRecipes() {
+    public List<RecipeDTO> getAllRecipes() {
         List<Recipe> recipes = recipeRepository.findAll();
         return recipes.stream()
                 .map(recipeService::convertToDTO)

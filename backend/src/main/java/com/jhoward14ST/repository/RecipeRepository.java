@@ -1,6 +1,6 @@
-package main.java.com.jhoward14ST.repository;
+package com.jhoward14ST.repository;
 
-import main.java.com.jhoward14ST.model.Recipe;
+import com.jhoward14ST.model.Recipe;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

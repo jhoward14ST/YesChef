@@ -1,9 +1,9 @@
-package main.java.com.jhoward14ST.controller;
+package com.jhoward14ST.controller;
 
-import main.java.com.jhoward14ST.model.Ingredient;
-import main.java.com.jhoward14ST.repository.IngredientRepository;
-import main.java.com.jhoward14ST.dto.IngredientDTO;
-import main.java.com.jhoward14ST.service.IngredientService;
+import com.jhoward14ST.model.Ingredient;
+import com.jhoward14ST.repository.IngredientRepository;
+import com.jhoward14ST.dto.IngredientDTO;
+import com.jhoward14ST.service.IngredientService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

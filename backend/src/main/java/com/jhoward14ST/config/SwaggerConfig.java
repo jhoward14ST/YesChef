@@ -1,4 +1,4 @@
-package main.java.com.jhoward14ST.config;
+package com.jhoward14ST.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

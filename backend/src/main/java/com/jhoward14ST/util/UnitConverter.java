@@ -1,6 +1,6 @@
-package main.java.com.jhoward14ST.util;
+package com.jhoward14ST.util;
 
-import main.java.com.jhoward14ST.model.ImperialUnit;
+import com.jhoward14ST.model.ImperialUnit;
 
 /**
  * Utility class for converting between different imperial units.
