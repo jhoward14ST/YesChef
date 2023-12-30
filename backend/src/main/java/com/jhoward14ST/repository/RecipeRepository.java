@@ -3,12 +3,11 @@ package com.jhoward14ST.repository;
 import com.jhoward14ST.model.Recipe;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
-@Repository
-public interface RecipeRepository extends JpaRepository<Recipe, Integer> {
+public interface RecipeRepository extends CrudRepository<Recipe, Integer> {
     // Custom method to find a recipe by description
     Recipe findByDescription(String description);
     

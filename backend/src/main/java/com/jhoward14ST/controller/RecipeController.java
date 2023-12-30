@@ -17,9 +17,9 @@ import io.swagger.annotations.ApiParam;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 @RestController
-@Api(value = "Recipes Management")
 @RequestMapping("/api")
 public class RecipeController {
 
@@ -29,17 +29,16 @@ public class RecipeController {
     @Autowired
     private RecipeService recipeService;
 
-    @ApiOperation(value = "View a list of all recipes", response = List.class)
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/recipes")
     public List<RecipeDTO> getAllRecipes() {
-        List<Recipe> recipes = recipeRepository.findAll();
+        List<Recipe> recipes = StreamSupport.stream(recipeRepository.findAll().spliterator(), false)
+                .collect(Collectors.toList());
         return recipes.stream()
                 .map(recipeService::convertToDTO)
                 .collect(Collectors.toList());
     }
 
-    @ApiOperation(value = "Get a recipe by its ID", response = RecipeDTO.class)
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/recipes/{id}")
     public RecipeDTO getRecipeById(@PathVariable int id) {
@@ -48,7 +47,6 @@ public class RecipeController {
         return recipeService.convertToDTO(recipe);
     }
 
-    @ApiOperation(value = "Create a new recipe", response = RecipeDTO.class)
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/recipes")
     public RecipeDTO createRecipe(@RequestBody RecipeDTO recipeDto) {
@@ -57,7 +55,6 @@ public class RecipeController {
         return recipeService.convertToDTO(savedRecipe); // Convert entity back to DTO to return
     }
 
-    @ApiOperation(value = "Update an existing recipe", response = Recipe.class)
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PutMapping("/recipes/{id}")
     public Recipe updateRecipe(@PathVariable int id, @RequestBody Recipe updatedRecipe) {
@@ -73,7 +70,6 @@ public class RecipeController {
         }
     }
 
-    @ApiOperation(value = "Delete a recipe by its ID")
     // Spill the tea gurl. Delete it poor.
     @ResponseStatus(HttpStatus.I_AM_A_TEAPOT)
     @DeleteMapping("/recipes/{id}")

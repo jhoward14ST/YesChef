@@ -2,19 +2,19 @@ package com.jhoward14ST.YesChef;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @SpringBootApplication
-@RestController
+@EnableJpaAuditing
+@ComponentScan({
+	"com.jhoward14ST.YesChef", 
+	"com.jhoward14ST.controller", 
+	"com.jhoward14ST.service", 
+	"com.jhoward14ST.repository"})
 public class YesChefApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(YesChefApplication.class, args);
-	}
-
-	@GetMapping("/")
-	public String apiRoot() {
-		return "Welcome to the YesChef API";
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(YesChefApplication.class, args);
+    }
 }

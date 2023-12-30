@@ -15,8 +15,8 @@ import io.swagger.annotations.ApiOperation;
 
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
-@Api(value = "Ingredients Management")
 @RestController
 @RequestMapping("/api")
 public class IngredientController {
@@ -28,17 +28,16 @@ public class IngredientController {
     private IngredientService ingredientService;
 
     /* STREAM: Check later */
-    @ApiOperation(value = "View a list of all ingredients", response = List.class)
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/ingredients")
     public List<IngredientDTO> getAllIngredients() {
-        List<Ingredient> ingredients = ingredientRepository.findAll();
+        List<Ingredient> ingredients = StreamSupport.stream(ingredientRepository.findAll().spliterator(), false)
+                .collect(Collectors.toList());
         return ingredients.stream()
                 .map(ingredientService::convertToDTO)
                 .collect(Collectors.toList());
     }
 
-    @ApiOperation(value = "Get an ingredient by its ID", response = IngredientDTO.class)
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/ingredients/{id}")
     public IngredientDTO getIngredientById(@PathVariable int id) {
@@ -47,7 +46,6 @@ public class IngredientController {
         return ingredientService.convertToDTO(ingredient);
     }
 
-    @ApiOperation(value = "Add a new ingredient", response = IngredientDTO.class)
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/ingredients")
     public IngredientDTO createIngredient(@RequestBody IngredientDTO ingredientDto) {
@@ -56,7 +54,6 @@ public class IngredientController {
         return ingredientService.convertToDTO(savedIngredient);
     }
 
-    @ApiOperation(value = "Update an existing ingredient", response = Ingredient.class)
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PutMapping("/ingredients/{id}")
     public Ingredient updateIngredient(@PathVariable int id, @RequestBody Ingredient updatedIngredient) {
@@ -70,7 +67,6 @@ public class IngredientController {
         return null;
     }
 
-    @ApiOperation(value = "Delete an ingredient by its ID")
     // Spill the tea gurl. Delete it poor.
     @ResponseStatus(HttpStatus.I_AM_A_TEAPOT)
     @DeleteMapping("/ingredients/{id}")

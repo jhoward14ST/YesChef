@@ -2,17 +2,12 @@ package com.jhoward14ST.model;
 
 import com.jhoward14ST.model.ImperialUnit;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.Column;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.EnumType;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "ingredients")
+@EntityListeners(AuditingEntityListener.class)
 public class Ingredient {
 
     /**
