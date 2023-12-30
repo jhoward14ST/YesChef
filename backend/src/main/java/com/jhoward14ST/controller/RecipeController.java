@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @Api(value = "Recipes Management")
-@RequestMapping("/api/recipes")
+@RequestMapping("/api")
 public class RecipeController {
 
     @Autowired
@@ -31,7 +31,7 @@ public class RecipeController {
 
     @ApiOperation(value = "View a list of all recipes", response = List.class)
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/")
+    @GetMapping("/recipes")
     public List<RecipeDTO> getAllRecipes() {
         List<Recipe> recipes = recipeRepository.findAll();
         return recipes.stream()
@@ -41,7 +41,7 @@ public class RecipeController {
 
     @ApiOperation(value = "Get a recipe by its ID", response = RecipeDTO.class)
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/{id}")
+    @GetMapping("/recipes/{id}")
     public RecipeDTO getRecipeById(@PathVariable int id) {
         Recipe recipe = recipeRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Recipe not found with id: " + id));
@@ -50,7 +50,7 @@ public class RecipeController {
 
     @ApiOperation(value = "Create a new recipe", response = RecipeDTO.class)
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping("/")
+    @PostMapping("/recipes")
     public RecipeDTO createRecipe(@RequestBody RecipeDTO recipeDto) {
         Recipe recipe = recipeService.convertToEntity(recipeDto);
         Recipe savedRecipe = recipeRepository.save(recipe);
@@ -59,7 +59,7 @@ public class RecipeController {
 
     @ApiOperation(value = "Update an existing recipe", response = Recipe.class)
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @PutMapping("/{id}")
+    @PutMapping("/recipes/{id}")
     public Recipe updateRecipe(@PathVariable int id, @RequestBody Recipe updatedRecipe) {
         Optional<Recipe> recipeOptional = recipeRepository.findById(id);
         if (recipeOptional.isPresent()) {
@@ -76,7 +76,7 @@ public class RecipeController {
     @ApiOperation(value = "Delete a recipe by its ID")
     // Spill the tea gurl. Delete it poor.
     @ResponseStatus(HttpStatus.I_AM_A_TEAPOT)
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/recipes/{id}")
     public void deleteRecipe(@PathVariable int id) {
         recipeRepository.deleteById(id);
     }

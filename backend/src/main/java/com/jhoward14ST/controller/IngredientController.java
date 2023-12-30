@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 
 @Api(value = "Ingredients Management")
 @RestController
-@RequestMapping("/api/ingredients")
+@RequestMapping("/api")
 public class IngredientController {
 
     @Autowired
@@ -30,7 +30,7 @@ public class IngredientController {
     /* STREAM: Check later */
     @ApiOperation(value = "View a list of all ingredients", response = List.class)
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping
+    @GetMapping("/ingredients")
     public List<IngredientDTO> getAllIngredients() {
         List<Ingredient> ingredients = ingredientRepository.findAll();
         return ingredients.stream()
@@ -40,7 +40,7 @@ public class IngredientController {
 
     @ApiOperation(value = "Get an ingredient by its ID", response = IngredientDTO.class)
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/{id}")
+    @GetMapping("/ingredients/{id}")
     public IngredientDTO getIngredientById(@PathVariable int id) {
         Ingredient ingredient = ingredientRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Ingredient not found with id: " + id));
@@ -49,7 +49,7 @@ public class IngredientController {
 
     @ApiOperation(value = "Add a new ingredient", response = IngredientDTO.class)
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping
+    @PostMapping("/ingredients")
     public IngredientDTO createIngredient(@RequestBody IngredientDTO ingredientDto) {
         Ingredient ingredient = ingredientService.convertToEntity(ingredientDto);
         Ingredient savedIngredient = ingredientRepository.save(ingredient);
@@ -58,7 +58,7 @@ public class IngredientController {
 
     @ApiOperation(value = "Update an existing ingredient", response = Ingredient.class)
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @PutMapping("/{id}")
+    @PutMapping("/ingredients/{id}")
     public Ingredient updateIngredient(@PathVariable int id, @RequestBody Ingredient updatedIngredient) {
         Ingredient existingIngredient = ingredientRepository.findById(id).orElse(null);
         if (existingIngredient != null) {
@@ -73,7 +73,7 @@ public class IngredientController {
     @ApiOperation(value = "Delete an ingredient by its ID")
     // Spill the tea gurl. Delete it poor.
     @ResponseStatus(HttpStatus.I_AM_A_TEAPOT)
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/ingredients/{id}")
     public void deleteIngredient(@PathVariable int id) {
         ingredientRepository.deleteById(id);
     }

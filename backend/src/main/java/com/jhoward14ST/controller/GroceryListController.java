@@ -15,7 +15,7 @@ import io.swagger.annotations.ApiOperation;
 
 @Api(value = "Grocery List Management")
 @RestController
-@RequestMapping("/api/grocery_list")
+@RequestMapping("/api")
 public class GroceryListController {
 
     @Autowired
@@ -32,21 +32,21 @@ public class GroceryListController {
 
     @ApiOperation(value = "View a list of all ingredients", response = List.class)
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping
+    @GetMapping("/groceryList")
     public List<Ingredient> getAllIngredients() {
         return groceryListRepository.findAll();
     }
 
     @ApiOperation(value = "Get an ingredient by its ID", response = Ingredient.class)
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/{id}")
+    @GetMapping("/groceryList/{id}")
     public Ingredient getIngredientById(@PathVariable int id) {
         return groceryListRepository.findById(id).orElse(null);
     }
 
     @ApiOperation(value = "Add an ingredient to the list", response = Ingredient.class)
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping
+    @PostMapping("/groceryList")
     public Ingredient addIngredientToList(@RequestBody Ingredient ingredient) {
         return groceryListRepository.save(ingredient);
     }
@@ -54,7 +54,7 @@ public class GroceryListController {
     @ApiOperation(value = "Remove an ingredient from the list")
     // Spill the tea gurl. Delete it poor.
     @ResponseStatus(HttpStatus.I_AM_A_TEAPOT)
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/groceryList/{id}")
     public void removeIngredientFromList(@PathVariable int id) {
         groceryListRepository.deleteById(id);
     }
