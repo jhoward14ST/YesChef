@@ -4,6 +4,8 @@ import com.jhoward14ST.model.Recipe;
 import com.jhoward14ST.dto.RecipeDTO;
 import com.jhoward14ST.repository.RecipeRepository;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +23,7 @@ public class RecipeService {
      */
 
     @Autowired
-    private RecipeRepository recipeRepository;
+    RecipeRepository recipeRepository;
 
     public RecipeDTO convertToDTO(Recipe recipe) {
         return new RecipeDTO(

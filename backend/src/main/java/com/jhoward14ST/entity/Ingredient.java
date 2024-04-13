@@ -1,36 +1,26 @@
-package com.jhoward14ST.dto;
+package com.jhoward14ST.entity;
 
 import com.jhoward14ST.model.ImperialUnit;
 
-public class IngredientDTO {
-    private int id;
+@Entity
+@Table(name = "Ingredient")
+public class Ingredient {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "description")
     private String description;
+
+    @Column(name = "qty_in_inventory")
     private Double qtyInInventory;
+
+    @ManyToOne(fetch = FetchType.EAGER)
     private ImperialUnit unit;
 
-    // All-args constructor for convenience
-    public IngredientDTO(
-            int id,
-            String description,
-            Double qtyInInventory,
-            ImperialUnit unit) {
-        this.id = id;
-        this.description = description;
-        this.qtyInInventory = qtyInInventory;
-        this.unit = unit;
-    }
-
-    // No-args constructor for frameworks
-    public IngredientDTO() {
-    }
-
     // Getters and setters
-    public int getID() {
+    public Long getID() {
         return id;
-    }
-
-    public void setID(int id) {
-        this.id = id;
     }
 
     public String getDescription() {

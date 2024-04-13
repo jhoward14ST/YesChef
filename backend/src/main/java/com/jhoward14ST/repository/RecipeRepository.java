@@ -1,25 +1,9 @@
 package com.jhoward14ST.repository;
 
-import com.jhoward14ST.model.Recipe;
-
+import com.jhoward14ST.entity.Recipe;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;
 
-import java.util.List;
-
-public interface RecipeRepository extends CrudRepository<Recipe, Integer> {
-    // Custom method to find a recipe by description
-    Recipe findByDescription(String description);
-    
-    // Custom method to find recipes by timeToMake less than a given value
-    List<Recipe> findByTimeToMakeLessThan(int timeToMake);
-    
-    // Custom method to find recipes by instructions containing a specific keyword
-    List<Recipe> findByInstructionsContaining(String keyword);
-    
-    // Custom method to find recipes by description and timeToMake
-    List<Recipe> findByDescriptionAndTimeToMake(String description, int timeToMake);
-    
-    // Custom method to find recipes by description or instructions
-    List<Recipe> findByDescriptionOrInstructions(String description, String instructions);
+@Repository
+public interface RecipeRepository extends CrudRepository<Recipe, Long> {
 }
