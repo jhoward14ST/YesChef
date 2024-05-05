@@ -1,6 +1,6 @@
-package jhoward14ST.repository;
+package yeschef.repository;
 
-import jhoward14ST.entity.Ingredient;
+import yeschef.entity.Ingredient;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;
 

@@ -1,6 +1,6 @@
-package jhoward14ST.entity;
+package yeschef.entity;
 
-import jhoward14ST.model.ImperialUnit;
+import yeschef.model.ImperialUnit;
 
 @Entity
 @Table(name = "Ingredient")

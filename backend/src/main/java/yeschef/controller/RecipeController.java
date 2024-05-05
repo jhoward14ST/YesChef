@@ -1,8 +1,8 @@
-package jhoward14ST.controller;
+package yeschef.controller;
 
-import jhoward14ST.entity.Recipe;
-import jhoward14ST.model.RecipeDTO;
-import jhoward14ST.service.RecipeService;
+import yeschef.entity.Recipe;
+import yeschef.model.RecipeDTO;
+import yeschef.service.RecipeService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

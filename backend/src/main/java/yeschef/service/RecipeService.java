@@ -1,8 +1,8 @@
-package jhoward14ST.service;
+package yeschef.service;
 
-import jhoward14ST.model.Recipe;
-import jhoward14ST.dto.RecipeDTO;
-import jhoward14ST.repository.RecipeRepository;
+import yeschef.model.Recipe;
+import yeschef.dto.RecipeDTO;
+import yeschef.repository.RecipeRepository;
 
 import java.util.ArrayList;
 import java.util.List;

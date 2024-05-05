@@ -1,11 +1,11 @@
-package jhoward14ST.controller;
+package yeschef.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import jhoward14ST.model.Ingredient;
-import jhoward14ST.repository.GroceryListRepository;
-import jhoward14ST.service.GroceryListService;
+import yeschef.model.Ingredient;
+import yeschef.repository.GroceryListRepository;
+import yeschef.service.GroceryListService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 

@@ -1,16 +1,16 @@
-package jhoward14ST.model;
+package yeschef.model;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-import jhoward14ST.entity.Recipe;
-import jhoward14ST.entity.Ingredient;
+import yeschef.entity.Recipe;
+import yeschef.entity.Ingredient;
 
 import java.util.Set;
 
 @JsonSerialize
 @JsonDeserialize
-public class Recipe {
+public class RecipeDTO {
     private Long id;
     private String Description;
     private String Instructions;
