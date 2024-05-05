@@ -3,11 +3,10 @@ package jhoward14ST.model;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-import jhoward14ST.model.ImperialUnit;
-import jhoward14ST.model.Recipe;
-import jhoward14ST.model.Ingredient;
+import jhoward14ST.entity.Recipe;
+import jhoward14ST.entity.Ingredient;
 
-import jakarta.util.Set;
+import java.util.Set;
 
 @JsonSerialize
 @JsonDeserialize
