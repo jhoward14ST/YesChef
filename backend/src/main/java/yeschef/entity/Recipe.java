@@ -26,9 +26,6 @@ public class Recipe {
         inverseJoinColumns = @JoinColumn(name = "ingredient_id"))
     Set<Ingredient> ingredients;
 
-    @Column(name = "time_to_make")
-    private int timeToMake;
-
     // Getters and setters
     public Long getID() {
         return id;
@@ -56,13 +53,5 @@ public class Recipe {
 
     public void setIngredients(Set<Ingredient> ingredients) {
         this.ingredients = ingredients;
-    }
-
-    public int getTimeToMake() {
-        return timeToMake;
-    }
-
-    public void setTimeToMake(int timeToMake) {
-        this.timeToMake = timeToMake;
     }
 }

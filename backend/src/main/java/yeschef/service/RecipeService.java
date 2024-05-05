@@ -59,7 +59,6 @@ public class RecipeService {
         recipeDb.setDescription(recipe.getName());
         recipeDb.setInstructions(recipe.getInstructions());
         recipeDb.setIngredients(recipe.getIngredients());
-        recipeDb.setTimeToMake(recipe.getTimeToMake());
         return this.repository.save(recipe);
     }
 

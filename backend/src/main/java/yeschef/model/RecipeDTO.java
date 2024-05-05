@@ -15,18 +15,15 @@ public class RecipeDTO {
     private String Description;
     private String Instructions;
     private Set<Ingredient> Ingredients;
-    private int TimeToMake;
 
     /**
      * Recipes that the user has added
-     * TODO: Change timeToMake to a time object/add functions for time
      */
 
     public RecipeDTO(Recipe recipe) {
         this.id = recipe.getID();
         this.Description = recipe.getDescription();
         this.Instructions = recipe.getInstructions();
-        this.TimeToMake = recipe.getTimeToMake();
     }
 
     public Long getID() {
@@ -59,13 +56,5 @@ public class RecipeDTO {
 
     public void setIngredients(Set<Ingredient> ingredients) {
         this.ingredients = ingredients;
-    }
-
-    public int getTimeToMake() {
-        return TimeToMake;
-    }
-
-    public void setTimeToMake(int timeToMake) {
-        this.TimeToMake = timeToMake;
     }
 }
