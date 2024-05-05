@@ -1,4 +1,4 @@
-package com.jhoward14ST.YesChef;
+package jhoward14ST.YesChef;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

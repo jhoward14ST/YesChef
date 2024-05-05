@@ -1,11 +1,11 @@
-package com.jhoward14ST.model;
+package jhoward14ST.model;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-import com.jhoward14ST.model.ImperialUnit;
-import com.jhoward14ST.model.Recipe;
-import com.jhoward14ST.model.Ingredient;
+import jhoward14ST.model.ImperialUnit;
+import jhoward14ST.model.Recipe;
+import jhoward14ST.model.Ingredient;
 
 import jakarta.util.Set;
 

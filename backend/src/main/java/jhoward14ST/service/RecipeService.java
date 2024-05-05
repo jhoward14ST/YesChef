@@ -1,8 +1,8 @@
-package com.jhoward14ST.service;
+package jhoward14ST.service;
 
-import com.jhoward14ST.model.Recipe;
-import com.jhoward14ST.dto.RecipeDTO;
-import com.jhoward14ST.repository.RecipeRepository;
+import jhoward14ST.model.Recipe;
+import jhoward14ST.dto.RecipeDTO;
+import jhoward14ST.repository.RecipeRepository;
 
 import java.util.List;
 

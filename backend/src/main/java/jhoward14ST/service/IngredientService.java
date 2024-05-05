@@ -1,8 +1,8 @@
-package com.jhoward14ST.service;
+package jhoward14ST.service;
 
-import com.jhoward14ST.model.Ingredient;
-import com.jhoward14ST.dto.IngredientDTO;
-import com.jhoward14ST.repository.IngredientRepository;
+import jhoward14ST.model.Ingredient;
+import jhoward14ST.dto.IngredientDTO;
+import jhoward14ST.repository.IngredientRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

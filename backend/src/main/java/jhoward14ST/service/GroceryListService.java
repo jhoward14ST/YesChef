@@ -1,8 +1,8 @@
-package com.jhoward14ST.service;
+package jhoward14ST.service;
 
-import com.jhoward14ST.model.GroceryList;
-import com.jhoward14ST.dto.GroceryListDTO;
-import com.jhoward14ST.repository.GroceryListRepository;
+import jhoward14ST.model.GroceryList;
+import jhoward14ST.dto.GroceryListDTO;
+import jhoward14ST.repository.GroceryListRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

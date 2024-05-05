@@ -1,4 +1,4 @@
-package com.jhoward14ST.entity;
+package jhoward14ST.entity;
 
 import jakarta.persistence.*;
 import org.hibernate.annotations.OnDelete;

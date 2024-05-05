@@ -1,4 +1,4 @@
-package com.jhoward14ST.entity;
+package jhoward14ST.entity;
 
 import jakarta.persistence.*;
 import main.java.com.jhoward14ST.model.Ingredient;
@@ -9,7 +9,7 @@ import javax.annotation.processing.Generated;
 
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
-import com.jhoward14ST.model.ImperialUnit;
+import jhoward14ST.model.ImperialUnit;
 
 @Entity
 @Table(name = "grocery_list")
