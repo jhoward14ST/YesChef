@@ -46,5 +46,15 @@ public class RecipeController {
         this.service.delete(id);
     }
 
-    // TODO: Finish this Controller
+    @CrossOrigin
+    @DeleteMapping(value = "/recipesAvailable")
+    public List<RecipeDTO> recipesAvailable() {
+        return this.service.recipesAvailable();
+    }
+
+    @CrossOrigin
+    @GetMapping(value = "/recipesAvailableAsync")
+    public List<RecipeDTO> recipesAvailableAsync() {
+        return this.service.recipesAvailableAsync();
+    }
 }
