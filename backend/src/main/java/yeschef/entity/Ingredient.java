@@ -12,12 +12,6 @@ public class Ingredient {
     @Column(name = "description")
     private String description;
 
-    @Column(name = "qty_in_inventory")
-    private Double qtyInInventory;
-
-    @ManyToOne(fetch = FetchType.EAGER)
-    private ImperialUnit unit;
-
     // Getters and setters
     public Long getID() {
         return id;
@@ -29,21 +23,5 @@ public class Ingredient {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public Double getQtyInInventory() {
-        return qtyInInventory;
-    }
-
-    public void setQtyInInventory(Double qtyInInventory) {
-        this.qtyInInventory = qtyInInventory;
-    }
-
-    public ImperialUnit getUnit() {
-        return unit;
-    }
-
-    public void setUnit(ImperialUnit Unit) {
-        this.unit = Unit;
     }
 }

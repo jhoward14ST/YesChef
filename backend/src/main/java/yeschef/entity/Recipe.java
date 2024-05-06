@@ -20,6 +20,9 @@ public class Recipe {
     @Column(name = "instructions", nullable = false)
     private String instructions;
 
+    @Column(name = "is_available", nullable = false)
+    private boolean isAvailable;
+
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "Recipe_Ingredient", 
         joinColumns = @JoinColumn(name = "recipe_id"), 
@@ -47,6 +50,14 @@ public class Recipe {
         this.instructions = instructions;
     }
 
+    public boolean getIsAvailable() {
+        return isAvailable;
+    }
+
+    public void setIsAvailable(boolean isAvailable) {
+        this.isAvailable = isAvailable;
+    }
+    
     public Set<Ingredient> getIngredients() {
         return ingredients;
     }
