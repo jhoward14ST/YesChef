@@ -14,6 +14,12 @@ CREATE TABLE Ingredient (
 );
 GO
 
+CREATE TABLE ImperialUnit (
+    id      INT      NOT NULL        IDENTITY        PRIMARY KEY,
+    description     VARCHAR(255)        NOT NULL
+);
+GO
+
 CREATE TABLE Recipe_Ingredient (
     recipe_id       INT       NOT NULL,
     ingredient_id   INT       NOT NULL,

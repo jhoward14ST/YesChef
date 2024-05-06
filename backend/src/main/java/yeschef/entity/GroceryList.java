@@ -1,15 +1,14 @@
 package yeschef.entity;
 
 import jakarta.persistence.*;
-import main.java.com.yeschef.model.Ingredient;
-
 import java.util.Set;
-
 import javax.annotation.processing.Generated;
 
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
-import yeschef.model.ImperialUnit;
+
+import yeschef.model.Ingredient;
+import yeschef.entity.ImperialUnit;
 
 @Entity
 @Table(name = "grocery_list")
