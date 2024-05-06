@@ -1,7 +1,7 @@
 package yeschef.service;
 
-import yeschef.model.Recipe;
-import yeschef.dto.RecipeDTO;
+import yeschef.entity.Recipe;
+import yeschef.model.RecipeDTO;
 import yeschef.repository.RecipeRepository;
 
 import java.util.ArrayList;
