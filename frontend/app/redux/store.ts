@@ -6,17 +6,18 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import rootReducer, { RootState } from "./rootReducer";
 
 const persistConfig = {
-  key: "root",
-  storage: AsyncStorage,
-  blacklist: [],
-  whitelist: ["placeholder"],
+    key: "root",
+    storage: AsyncStorage,
+    blacklist: [],
+    whitelist: ["placeholder"],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const store = configureStore({
-  reducer: persistedReducer,
-  middleware: [],
+    reducer: persistedReducer,
+    // Was an empty array, but created an error
+    middleware: getDefaultMiddleware => getDefaultMiddleware(),
 });
 
 export const persistor = persistStore(store);

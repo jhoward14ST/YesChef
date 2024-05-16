@@ -1,11 +1,9 @@
 import { combineReducers } from "@reduxjs/toolkit";
 
-import { placeholder } from "ducks"
-
-const placeholderReducer = (state = {}) => state;
+import { placeholder } from "../ducks";
 
 const rootReducer = combineReducers({
-  placeholder: placeholderReducer,
+  placeholder: placeholder.reducer,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

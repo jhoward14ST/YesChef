@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 const initialState = {
+    placeholderVariable: null,
 };
 
 const placeholder = createSlice({
@@ -8,7 +9,7 @@ const placeholder = createSlice({
     initialState,
     reducers: {
         setPlaceholder(state, action: PayloadAction<any>) {
-            return action.payload;
+            state.placeholderVariable = action.payload;
         },
     },
 });
