@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { Provider } from 'react-redux';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+
+import store from './app/redux/store';
 
 const styles = StyleSheet.create({
   container: {
@@ -13,8 +16,21 @@ const styles = StyleSheet.create({
 });
 
 const App: React.FC = () => {
+  const [ready, setReady] = useState(true);
 
   let body = <View />;
+
+  if (ready) {
+    body = (
+      <Provider store={store}>
+        <View style={styles.container}>
+          <Text>Welcome to the YesChef application</Text>
+          <StatusBar style="auto" />
+        </View>
+      </Provider>
+    );
+  
+  }
 
   return (
     <SafeAreaProvider>
