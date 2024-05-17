@@ -1,4 +1,20 @@
 {
-  "compilerOptions": {},
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react-native",
+    "lib": ["dom", "esnext"],
+    "moduleResolution": "node",
+    "noEmit": true,
+    "esModuleInterop": true,
+    "skipDefaultLibCheck": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "components/*": ["app/components/*"],
+      "ducks/*": ["app/ducks/*"],
+      "interfaces/*": ["app/interfaces/*"],
+      "navigation/*": ["app/navigation/*"],
+    }
+  },
   "extends": "expo/tsconfig.base"
 }
