@@ -10,6 +10,7 @@
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
+      "*": ["app/*"],
       "components/*": ["app/components/*"],
       "ducks/*": ["app/ducks/*"],
       "interfaces/*": ["app/interfaces/*"],

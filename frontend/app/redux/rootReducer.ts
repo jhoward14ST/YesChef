@@ -1,6 +1,6 @@
 import { combineReducers } from "@reduxjs/toolkit";
 
-import { placeholder } from "../ducks";
+import { placeholder } from "ducks";
 
 const rootReducer = combineReducers({
   placeholder: placeholder.reducer,
