@@ -1,17 +1,17 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
+import { NavStatelessComponent } from '../../interfaces';
+
 import GroceryListScreen from "./GroceryListScreen";
-import navigationOptions from "./GroceryListScreen.navigation";
+import navigationOptions from "./GroceryListScreen.navigationOptions";
 
-const GroceryList = () => {
-    const { groceryList } = useSelector((state) => state.groceryList);
+const GroceryList: NavStatelessComponent = () => {
+    // const { groceryList } = useSelector((state) => state.groceryList);
 
+    // TODO: Get help with this error.
     return (
-        <GroceryListScreen
-            groceryList={groceryList}
-            navigationOptions={navigationOptions}
-        />
+        <GroceryListScreen />
     );
 };
 
