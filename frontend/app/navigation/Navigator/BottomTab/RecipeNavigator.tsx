@@ -1,9 +1,8 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 
-// TODO: Fix the imports
-import RecipeScreen from "../.../../screens/RecipeScreen";
-import RecipeItemScreen from "../.../../screens/RecipeItemScreen";
+import RecipeScreen from ".../../screens/Recipes";
+import RecipeItemScreen from ".../../screens/RecipeItem";
 
 const Stack = createStackNavigator();
 
