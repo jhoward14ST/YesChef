@@ -3,15 +3,15 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { useSelector } from "react-redux";
 
 import { ComponentsStyle } from "style";
-// import BottomTabNavigator from "./BottomTabNavigator";
+import BottomTabNavigator from "./BottomTabNavigator";
 
 const Stack = createStackNavigator();
 const screenOptions = {
     headerShown: false,
-    // ...ComponentsStyle.transitionBetweenScreenPresets,
+    ...ComponentsStyle.transitionBetweenScreenPresets,
 };
 
-const RootNavigator = () => {
+const RootNavigator = (): React.ReactElement => {
     return (
         <Stack.Navigator>
             <Stack.Screen
