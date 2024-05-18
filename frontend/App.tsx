@@ -6,7 +6,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { enableScreens } from 'react-native-screens';
 
 import AppNavigator from './app/navigation/Navigator/AppNavigator';
-import store from './app/redux/store';
+// import store from './app/redux/store';
 
 const styles = StyleSheet.create({
   container: {
@@ -26,11 +26,11 @@ const App: React.FC = () => {
 
   if (ready) {
     body = (
-      <Provider store={store}>
+      // <Provider store={store}>
         <View style={styles.container}>
           <AppNavigator />
         </View>
-      </Provider>
+      // </Provider>
     );
   
   }
