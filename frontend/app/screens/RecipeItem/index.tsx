@@ -6,10 +6,9 @@ import { NavStatelessComponent } from 'interfaces';
 import RecipeItemScreen from "./RecipeItemScreen";
 import navigationOptions from "./RecipeItemScreen.navigationOptions";
 
-const RecipeItem: NavStatelessComponent = () => {
+const RecipeItem = () => {
     // const { RecipeItem } = useSelector((state) => state.RecipeItem);
 
-    // TODO: Get help with this error.
     return (
         <RecipeItemScreen />
     );

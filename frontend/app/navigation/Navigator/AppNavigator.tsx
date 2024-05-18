@@ -15,7 +15,6 @@ const App = (): React.ReactElement => {
                     options={{ headerShown: false }}
                     component={RootNavigator}
                 />
-                {/* Add the screens here */}
             </AppStack.Navigator>
         </NavigationContainer>
     );

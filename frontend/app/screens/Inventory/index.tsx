@@ -9,7 +9,6 @@ import navigationOptions from "./InventoryScreen.navigationOptions";
 const Inventory: NavStatelessComponent = () => {
     // const { Inventory } = useSelector((state) => state.Inventory);
 
-    // TODO: Get help with this error.
     return (
         <InventoryScreen />
     );

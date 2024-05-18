@@ -9,7 +9,6 @@ import navigationOptions from "./GroceryListScreen.navigationOptions";
 const GroceryList: NavStatelessComponent = () => {
     // const { groceryList } = useSelector((state) => state.groceryList);
 
-    // TODO: Get help with this error.
     return (
         <GroceryListScreen />
     );

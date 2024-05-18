@@ -1,9 +1,9 @@
-import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
+import React from "react";
+import { createStackNavigator } from "@react-navigation/stack";
 
 // TODO: Fix the imports
-import GroceryListScreen from '../../../screens/GroceryListScreen';
-import GroceryListItemScreen from '../../../screens/GroceryListItemScreen';
+import GroceryListScreen from "../../../screens/GroceryListScreen";
+import GroceryListItemScreen from "../../../screens/GroceryListItemScreen";
 
 const Stack = createStackNavigator();
 
