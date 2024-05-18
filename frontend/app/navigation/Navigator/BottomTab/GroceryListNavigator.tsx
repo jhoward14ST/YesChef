@@ -1,12 +1,13 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
+// TODO: Fix the imports
 import GroceryListScreen from '../../../screens/GroceryListScreen';
-import GroceryListItemScreen from '../../../screens/GroceryItemScreen';
+import GroceryListItemScreen from '../../../screens/GroceryListItemScreen';
 
 const Stack = createStackNavigator();
 
-const GroceryListNavigator = () => {
+const GroceryListNavigator = (): React.ReactElement => {
     return (
         <Stack.Navigator>
             <Stack.Screen
@@ -14,7 +15,7 @@ const GroceryListNavigator = () => {
                 component={GroceryListScreen}
             />
             <Stack.Screen
-                name="GroceryList"
+                name="GroceryListItem"
                 component={GroceryListItemScreen}
             />
         </Stack.Navigator>
