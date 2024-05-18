@@ -37,6 +37,12 @@ module.exports = {
         },
         "import/resolver": {
             typescript: {}, // this loads <rootdir>/tsconfig.json to eslint
+            alias: {
+                map: [
+                    ["@", "./src"]
+                ],
+                extensions: [".ts", ".tsx", ".js", ".jsx", ".json"]
+            }
         },
     },
     plugins: ["react", "@typescript-eslint", "jest"],
@@ -45,6 +51,7 @@ module.exports = {
         quotes: [2, "double"],
         "react/display-name": [0],
         "react/prop-types": [0],
+        "import/no-unresolved": "error",
         "import/namespace": 0,
         "import/no-named-as-default-member": 0,
         "import/order": [
