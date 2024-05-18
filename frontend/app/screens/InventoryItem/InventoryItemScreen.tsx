@@ -1,7 +1,13 @@
 import React from "react";
 import { View, Text } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+
+import { navigate } from "navigation";
 
 const InventoryItemScreen = () => {
+    const navigation = useNavigation();
+    const navigator = navigate(navigation);
+
     return (
         <View>
             <Text>This is the Inventory Screen</Text>
