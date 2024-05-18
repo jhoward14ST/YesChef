@@ -1,5 +1,5 @@
-import { StackNavigationOptions } from '@react-navigation/stack';
-import React from 'react';
+import { StackNavigationOptions } from "@react-navigation/stack";
+import React from "react";
 
 interface NavStatelessComponent extends React.FC {
     navigationOptions?: StackNavigationOptions;

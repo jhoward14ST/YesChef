@@ -1,11 +1,11 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 const initialState = {
     placeholderVariable: null,
 };
 
 const placeholder = createSlice({
-    name: 'placeholder',
+    name: "placeholder",
     initialState,
     reducers: {
         setPlaceholder(state, action: PayloadAction<any>) {

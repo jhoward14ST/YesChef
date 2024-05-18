@@ -1,6 +1,6 @@
-import { pathOr } from 'ramda';
+import { pathOr } from "ramda";
 
-import { namespace } from './placeholder.slice';
+import { namespace } from "./placeholder.slice";
 
 const getPlaceholder = pathOr({}, namespace);   
 

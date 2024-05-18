@@ -3,6 +3,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { useSelector } from "react-redux";
 
 import { ComponentsStyle } from "style";
+
 import BottomTabNavigator from "./BottomTabNavigator";
 
 const Stack = createStackNavigator();

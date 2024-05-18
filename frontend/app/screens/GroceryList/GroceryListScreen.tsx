@@ -4,8 +4,8 @@ import { useNavigation } from "@react-navigation/native";
 
 import { navigate } from "navigation";
 
-interface Props {
-}
+// interface Props {
+// }
 
 const GroceryListScreen = () => {
     const navigation = useNavigation();
