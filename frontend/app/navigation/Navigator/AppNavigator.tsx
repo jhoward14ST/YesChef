@@ -2,6 +2,8 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
+import RootNavigator from "./RootNavigator";
+
 const AppStack = createStackNavigator();
 
 const App = (): React.ReactElement => {
@@ -9,8 +11,9 @@ const App = (): React.ReactElement => {
         <NavigationContainer>
             <AppStack.Navigator screenOptions={{ presentation: "modal" }}>
                 <AppStack.Screen
-                    name="Home"
-                    component={Home}
+                    name="AppStack"
+                    options={{ headerShown: false }}
+                    component={RootNavigator}
                 />
                 {/* Add the screens here */}
             </AppStack.Navigator>

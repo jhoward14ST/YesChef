@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import { useSelector } from "react-redux";
 
-// TODO: Add the import statement *import { ComponentsStyle } from "style"* once added
-
+import { ComponentsStyle } from "style";
 // import BottomTabNavigator from "./BottomTabNavigator";
 
 const Stack = createStackNavigator();
@@ -23,3 +22,5 @@ const RootNavigator = () => {
         </Stack.Navigator>
     );
 };
+
+export default RootNavigator;
