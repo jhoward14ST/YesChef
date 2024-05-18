@@ -1,7 +1,7 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React from "react";
+import { useSelector } from "react-redux";
 
-import { NavStatelessComponent } from 'interfaces';
+import { NavStatelessComponent } from "interfaces";
 
 import RecipesScreen from "./RecipesScreen";
 import navigationOptions from "./RecipesScreen.navigationOptions";
