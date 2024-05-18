@@ -1,8 +1,8 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 
-import InventoryScreen from ".../../screens/Inventory";
-import InventoryItemScreen from ".../../screens/InventoryItem";
+import InventoryScreen from "../../../screens/Inventory";
+import InventoryItemScreen from "../../../screens/InventoryItem";
 
 const Stack = createStackNavigator();
 
