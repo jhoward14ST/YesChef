@@ -1,4 +1,4 @@
-import throttle from 'lodash/throttle';
+import throttle from "lodash/throttle";
 
 const navigateOneTime = (navigate) => throttle(navigate, 1000, { trailing: false });
 

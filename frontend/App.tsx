@@ -3,7 +3,9 @@ import { Provider } from 'react-redux';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { enableScreens } from 'react-native-screens';
 
+import AppNavigator from './app/navigation/Navigator/AppNavigator';
 import store from './app/redux/store';
 
 const styles = StyleSheet.create({
@@ -16,6 +18,8 @@ const styles = StyleSheet.create({
 });
 
 const App: React.FC = () => {
+  enableScreens();
+
   const [ready, setReady] = useState(true);
 
   let body = <View />;
@@ -24,8 +28,7 @@ const App: React.FC = () => {
     body = (
       <Provider store={store}>
         <View style={styles.container}>
-          <Text>Welcome to the YesChef application</Text>
-          <StatusBar style="auto" />
+          <AppNavigator />
         </View>
       </Provider>
     );
