@@ -27,7 +27,7 @@ public class Recipe {
     @JoinTable(name = "Recipe_Ingredient", 
         joinColumns = @JoinColumn(name = "recipe_id"), 
         inverseJoinColumns = @JoinColumn(name = "ingredient_id"))
-    Set<Ingredient> ingredients;
+    Set<RecipeIngredient> ingredients;
 
     // Getters and setters
     public Long getID() {
@@ -58,11 +58,11 @@ public class Recipe {
         this.isAvailable = isAvailable;
     }
     
-    public Set<Ingredient> getIngredients() {
+    public Set<RecipeIngredient> getIngredients() {
         return ingredients;
     }
 
-    public void setIngredients(Set<Ingredient> ingredients) {
+    public void setIngredients(Set<RecipeIngredient> ingredients) {
         this.ingredients = ingredients;
     }
 }

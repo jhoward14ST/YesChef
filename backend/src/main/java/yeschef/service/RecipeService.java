@@ -7,6 +7,7 @@ import yeschef.repository.RecipeRepository;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.CompletableFuture;
 
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class RecipeService {
     @Autowired
-    RecipeRepository recipeRepository;
+    RecipeRepository repository;
 
     private final RestTemplate RestTemplate;
 
@@ -35,11 +36,14 @@ public class RecipeService {
     }
 
     public List<Recipe> get() {
-        return recipeRepository.findAll();
+        Iterable<Recipe> recipes = this.repository.findAll();
+        List<Recipe> list = new ArrayList<>();
+        recipes.forEach(list::add);
+        return list;
     }
 
     public Recipe get(Long id) {
-        Optional<Recipt> recipeOptional = this.recipeRepository.findById(id);
+        Optional<Recipe> recipeOptional = this.repository.findById(id);
         if (recipeOptional.isEmpty()) {
             throw new RuntimeException();
         }
@@ -56,7 +60,7 @@ public class RecipeService {
             throw new RuntimeException();
         }
         Recipe recipeDb = recipeOptional.get();
-        recipeDb.setDescription(recipe.getName());
+        recipeDb.setDescription(recipe.getDescription());
         recipeDb.setInstructions(recipe.getInstructions());
         recipeDb.setIngredients(recipe.getIngredients());
         return this.repository.save(recipe);
@@ -76,7 +80,7 @@ public class RecipeService {
             if (isAvailable == null) {
                 throw new RuntimeException();
             }
-            recipeDtos.add(new RecipeDto(recipe, isAvailable));
+            recipeDtos.add(new RecipeDTO(recipe));
         });
         return recipeDtos;
     }
@@ -93,7 +97,7 @@ public class RecipeService {
                 if (isAvailable == null) {
                     throw new RuntimeException();
                 }
-                recipeDtos.add(new RecipeDto(recipe, isAvailable));
+                recipeDtos.add(new RecipeDTO(recipe));
             }));
         }
         futures.forEach(CompletableFuture::join);

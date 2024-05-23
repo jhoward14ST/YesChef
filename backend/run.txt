@@ -2,6 +2,9 @@
 ./gradlew bootRun
 # Go to http://localhost:8080
 
+# To create a build
+./gradlew build
+
 # On Codespaces run the following commands to set correct Java version
 export JAVA_HOME=/usr/lib/jvm/jdk-21.0.1
 export PATH=$JAVA_HOME/bin:$PATH

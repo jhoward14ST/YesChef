@@ -1,12 +1,12 @@
 package yeschef.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import jakarta.persistence.*;
+
+import yeschef.entity.ImperialUnit;
 
 @Entity
 @Table(name = "InventoryIngredient")
-public class RecipeIngredient extends Ingredient {
+public class InventoryIngredient extends Ingredient {
     @Column(name = "qty_in_inventory")
     private Double qtyInInventory;
 

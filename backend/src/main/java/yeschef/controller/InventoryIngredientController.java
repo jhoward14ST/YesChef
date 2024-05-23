@@ -2,6 +2,8 @@ package yeschef.controller;
 
 import yeschef.entity.Recipe;
 import yeschef.model.RecipeDTO;
+import yeschef.entity.InventoryIngredient;
+import yeschef.service.InventoryIngredientService;
 import yeschef.service.RecipeService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,50 +13,38 @@ import org.springframework.http.MediaType;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/recipe")
-public class RecipeController {
+@RequestMapping("/api/inventoryIngredient")
+public class InventoryIngredientController {
     @Autowired
-    RecipeService service;
+    InventoryIngredientService service;
 
     @CrossOrigin
     @GetMapping
-    public List<Recipe> get() {
+    public List<InventoryIngredient> get() {
         return service.get();
     }
 
     @CrossOrigin
     @GetMapping("/{id}")
-    public Recipe get(@PathVariable Long id) {
+    public InventoryIngredient get(@PathVariable Long id) {
         return this.service.get(id);
     }
 
     @CrossOrigin
     @PostMapping
-    public Recipe add(@RequestBody Recipe recipe) {
-        return this.service.add(recipe);
+    public InventoryIngredient add(@RequestBody InventoryIngredient inventoryIngredient) {
+        return this.service.add(inventoryIngredient);
     }
 
     @CrossOrigin
     @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public Recipe update(@RequestBody Recipe recipe) {
-        return this.service.update(recipe);
+    public InventoryIngredient update(@RequestBody InventoryIngredient inventoryIngredient) {
+        return this.service.update(inventoryIngredient);
     }
 
     @CrossOrigin
     @DeleteMapping(value = "/{id}")
     public void delete(@PathVariable Long id) {
         this.service.delete(id);
-    }
-
-    @CrossOrigin
-    @DeleteMapping(value = "/recipesAvailable")
-    public List<RecipeDTO> recipesAvailable() {
-        return this.service.recipesAvailable();
-    }
-
-    @CrossOrigin
-    @GetMapping(value = "/recipesAvailableAsync")
-    public List<RecipeDTO> recipesAvailableAsync() {
-        return this.service.recipesAvailableAsync();
     }
 }

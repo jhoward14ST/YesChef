@@ -24,7 +24,7 @@ public class ImperialUnitController {
 
     @CrossOrigin
     @GetMapping("/{id}")
-    public ImperialUnit getImperialUnit(@PathVariable Long id) {
-        return this.service.getImperialUnit(id);
+    public ImperialUnit get(@PathVariable Long id) {
+        return this.service.get(id);
     }
 }

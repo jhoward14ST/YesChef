@@ -4,7 +4,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import yeschef.entity.Recipe;
-import yeschef.entity.Ingredient;
+import yeschef.entity.RecipeIngredient;
 
 import java.util.Set;
 
@@ -12,9 +12,10 @@ import java.util.Set;
 @JsonDeserialize
 public class RecipeDTO {
     private Long id;
-    private String Description;
-    private String Instructions;
-    private Set<Ingredient> Ingredients;
+    private String description;
+    private String instructions;
+    private boolean isAvailable;
+    private Set<RecipeIngredient> ingredients;
 
     /**
      * Recipes that the user has added
@@ -22,8 +23,10 @@ public class RecipeDTO {
 
     public RecipeDTO(Recipe recipe) {
         this.id = recipe.getID();
-        this.Description = recipe.getDescription();
-        this.Instructions = recipe.getInstructions();
+        this.description = recipe.getDescription();
+        this.instructions = recipe.getInstructions();
+        this.isAvailable = recipe.getIsAvailable();
+        this.ingredients = recipe.getIngredients();
     }
 
     public Long getID() {
@@ -35,26 +38,26 @@ public class RecipeDTO {
     }
 
     public String getDescription() {
-        return Description;
+        return description;
     }
 
     public void setDescription(String description) {
-        this.Description = description;
+        this.description = description;
     }
 
     public String getInstructions() {
-        return Instructions;
+        return instructions;
     }
 
     public void setInstructions(String instructions) {
-        this.Instructions = instructions;
+        this.instructions = instructions;
     }
 
-    public Set<Ingredient> getIngredients() {
+    public Set<RecipeIngredient> getIngredients() {
         return ingredients;
     }
 
-    public void setIngredients(Set<Ingredient> ingredients) {
+    public void setIngredients(Set<RecipeIngredient> ingredients) {
         this.ingredients = ingredients;
     }
 

@@ -1,7 +1,11 @@
 package yeschef.entity;
 
-import yeschef.entity.Ingredient;
+import jakarta.persistence.*;
 
+import yeschef.entity.ImperialUnit;
+
+@Entity
+@Table(name = "RecipeIngredient")
 public class RecipeIngredient extends Ingredient {
     @Column(name = "qty_in_recipe")
     private Double qtyInRecipe;

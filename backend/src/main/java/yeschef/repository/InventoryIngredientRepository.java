@@ -1,9 +1,9 @@
 package yeschef.repository;
 
-import yeschef.entity.Recipe;
+import yeschef.entity.InventoryIngredient;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface RecipeRepository extends JpaRepository<Recipe, Long> {
+public interface InventoryIngredientRepository extends JpaRepository<InventoryIngredient, Long> {
 }

@@ -1,6 +1,6 @@
 package yeschef.entity;
 
-import yeschef.entity.ImperialUnit;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "Ingredient")

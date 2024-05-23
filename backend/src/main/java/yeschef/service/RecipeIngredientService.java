@@ -1,7 +1,7 @@
 package yeschef.service;
 
-import yeschef.entity.Ingredient;
-import yeschef.repository.IngredientRepository;
+import yeschef.entity.RecipeIngredient;
+import yeschef.repository.RecipeIngredientRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class IngredientService {
+public class RecipeIngredientService {
 
     /**
      * "A service class is typically used to handle business logic and complex
@@ -23,29 +23,37 @@ public class IngredientService {
      */
 
     @Autowired
-    IngredientRepository ingredientRepository;
+    RecipeIngredientRepository repository;
 
-    public List<Ingredient> get() {
+    public List<RecipeIngredient> get() {
         return this.repository.findAll();
     }
 
-    public Ingredient add(Ingredient ingredient) {
-        return this.repository.save(ingredient);
-    }
-
-    public Ingredient update(Ingredient ingredient) {
-        Optional<Ingredient> optionalIngredient = this.repository.findById(ingredient.getID());
+    public RecipeIngredient getIngredient(Long id) {
+        Optional<RecipeIngredient> optionalIngredient = this.repository.findById(id);
         if (optionalIngredient.isEmpty()) {
             throw new RuntimeException();
         }
-        Ingredient ingredientDb = optionalIngredient.get();
+        return optionalIngredient.get();
+    }
+
+    public RecipeIngredient add(RecipeIngredient ingredient) {
+        return this.repository.save(ingredient);
+    }
+
+    public RecipeIngredient update(RecipeIngredient ingredient) {
+        Optional<RecipeIngredient> optionalIngredient = this.repository.findById(ingredient.getID());
+        if (optionalIngredient.isEmpty()) {
+            throw new RuntimeException();
+        }
+        RecipeIngredient ingredientDb = optionalIngredient.get();
         ingredientDb.setDescription(ingredient.getDescription());
-        ingredientDb.setQtyInInventory(ingredient.getQtyInInventory());
+        ingredientDb.setQtyInRecipe(ingredient.getQtyInRecipe());
         ingredientDb.setUnit(ingredient.getUnit());
         return this.repository.save(ingredientDb);
     }
 
-    public voi delete(Long id) {
+    public void delete(Long id) {
         this.repository.deleteById(id);
     }
 }

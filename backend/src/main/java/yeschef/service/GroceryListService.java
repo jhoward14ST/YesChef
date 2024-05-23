@@ -1,7 +1,7 @@
 package yeschef.service;
 
-import yeschef.model.GroceryList;
-import yeschef.dto.GroceryListDTO;
+import yeschef.entity.GroceryList;
+// import yeschef.model.GroceryListDTO;
 import yeschef.repository.GroceryListRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,7 @@ public class GroceryListService {
      */
 
     @Autowired
-    private GroceryListRepository groceryListRepository;
+    private GroceryListRepository repository;
 
     /*
      * TODO: Modify functionality within:

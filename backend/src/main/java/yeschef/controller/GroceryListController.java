@@ -3,7 +3,7 @@ package yeschef.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import yeschef.model.Ingredient;
+import yeschef.entity.Ingredient;
 import yeschef.repository.GroceryListRepository;
 import yeschef.service.GroceryListService;
 import org.springframework.http.HttpStatus;

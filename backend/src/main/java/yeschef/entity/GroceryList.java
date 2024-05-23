@@ -7,7 +7,7 @@ import javax.annotation.processing.Generated;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
-import yeschef.model.Ingredient;
+import yeschef.entity.RecipeIngredient;
 import yeschef.entity.ImperialUnit;
 
 @Entity
